@@ -11,13 +11,15 @@ import { UsersService } from '../users/users.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
+import { RefreshTokenService } from './refresh-token.service';
 
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly usersService: UsersService,
-    private readonly jwtService: JwtService,
-  ) {}
+  private readonly usersService: UsersService,
+  private readonly jwtService: JwtService,
+  private readonly refreshTokenService: RefreshTokenService,
+) {}
 
 
   // ================= REGISTER =================
@@ -178,6 +180,12 @@ console.log("ROLE FROM DATABASE:", user.role);
 
         },
       );
+      // Save Refresh Token in MongoDB
+await this.refreshTokenService.create(
+  user._id.toString(),
+  refreshToken,
+  new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
+);
 
 
 
@@ -215,74 +223,63 @@ console.log("ROLE FROM DATABASE:", user.role);
   // ================= REFRESH TOKEN =================
 
   async refreshToken(
-    refreshTokenDto: RefreshTokenDto,
-  ) {
+  refreshTokenDto: RefreshTokenDto,
+) {
+  const { refreshToken } = refreshTokenDto;
 
-    const {
+  try {
+    // Verify JWT
+    const payload = await this.jwtService.verifyAsync(
       refreshToken,
-    } = refreshTokenDto;
+      {
+        secret:
+          process.env.JWT_REFRESH_SECRET ||
+          'refresh_secret_123456',
+      },
+    );
 
-
-
-    try {
-
-      const payload =
-        await this.jwtService.verifyAsync(
-          refreshToken,
-          {
-
-            secret:
-              process.env.JWT_REFRESH_SECRET ||
-              'refresh_secret_123456',
-
-          },
-        );
-
-
-
-      const accessToken =
-        await this.jwtService.signAsync(
-          {
-
-            sub: payload.sub,
-
-            email: payload.email,
-
-            role: payload.role,
-
-          },
-          {
-
-            secret:
-              process.env.JWT_ACCESS_SECRET ||
-              'access_secret_123456',
-
-            expiresIn: 900,
-
-          },
-        );
-
-
-
-      return {
-
-        message:
-          'Access token refreshed successfully',
-
-        accessToken,
-
-      };
-
-
-    } catch {
-
-      throw new UnauthorizedException(
-        'Invalid Refresh Token',
+    // Check if token exists in MongoDB
+    const storedToken =
+      await this.refreshTokenService.findToken(
+        refreshToken,
       );
 
+    if (!storedToken) {
+      throw new UnauthorizedException(
+        'Refresh Token not found',
+      );
     }
 
+    // Generate new Access Token
+    const accessToken =
+      await this.jwtService.signAsync(
+        {
+          sub: payload.sub,
+          email: payload.email,
+          role: payload.role,
+        },
+        {
+          secret:
+            process.env.JWT_ACCESS_SECRET ||
+            'access_secret_123456',
+          expiresIn: 900,
+        },
+      );
+
+    return {
+      message:
+        'Access token refreshed successfully',
+      accessToken,
+    };
+
+  } catch {
+    throw new UnauthorizedException(
+      'Invalid Refresh Token',
+    );
   }
+}
+
+
 
 
 
@@ -290,15 +287,28 @@ console.log("ROLE FROM DATABASE:", user.role);
 
   // ================= LOGOUT =================
 
-  async logout() {
+async logout(
+  refreshTokenDto: RefreshTokenDto,
+) {
+  const { refreshToken } = refreshTokenDto;
 
-    return {
+  const storedToken =
+    await this.refreshTokenService.findToken(
+      refreshToken,
+    );
 
-      message:
-        'Logged out successfully',
-
-    };
-
+  if (!storedToken) {
+    throw new UnauthorizedException(
+      'Invalid Refresh Token',
+    );
   }
 
+  await this.refreshTokenService.removeToken(
+    refreshToken,
+  );
+
+  return {
+    message: 'Logged out successfully',
+  };
+}
 }

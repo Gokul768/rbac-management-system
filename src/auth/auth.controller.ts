@@ -41,8 +41,13 @@ export class AuthController {
   }
 
   // Logout
-  @Post('logout')
-  logout() {
-    return this.authService.logout();
-  }
+    // Logout
+@Post('logout')
+logout(
+  @Body() refreshTokenDto: RefreshTokenDto,
+) {
+  return this.authService.logout(
+    refreshTokenDto,
+  );
+}
 }
