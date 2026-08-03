@@ -861,45 +861,7 @@ Responsive dark theme.
 
 ---
 
-# 🚀 Deployment
 
-## Frontend
-
-Deploy using
-
-- Vercel
-- Netlify
-
-Environment Variable
-
-```env
-NEXT_PUBLIC_API_URL=https://your-api-url.com
-```
-
----
-
-## Backend
-
-Deploy using
-
-- Render
-- Railway
-- DigitalOcean
-- AWS
-
-Environment Variables
-
-```env
-PORT=
-
-MONGODB_URI=
-
-JWT_SECRET=
-
-JWT_REFRESH_SECRET=
-```
-
----
 
 ## Database
 
