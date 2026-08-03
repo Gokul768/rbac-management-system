@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="Enterprise RBAC Management System Banner" width="100%">
+</p>
+
 <div align="center">
 
 # 🚀 Enterprise RBAC Management System
@@ -26,6 +30,8 @@ and
 <strong>JWT Authentication</strong>.
 
 </p>
+
+
 
 <p>
 
