@@ -47,31 +47,25 @@ Designed as a professional Full Stack Developer Interview Assignment demonstrati
 2. [Project Overview](#-project-overview)
 3. [Project Objectives](#-project-objectives)
 4. [Key Features](#-key-features)
-5. [Assignment Completion Checklist](#-assignment-completion-checklist)
-6. [System Architecture](#️-system-architecture)
-7. [Technology Stack](#️-technology-stack)
-8. [Why This Tech Stack](#-why-this-tech-stack)
-9. [Project Structure](#-project-structure)
-10. [Getting Started](#-getting-started)
-11. [Environment Setup](#️-environment-setup)
-12. [Running the Application](#️-running-the-application)
-13. [API Documentation](#-api-documentation)
-14. [REST API Endpoints](#-rest-api-endpoints)
-15. [Database Collections](#️-database-collections)
-16. [Database Schema](#️-database-schema)
-17. [Authentication Flow](#-authentication-flow)
-18. [Security Implementation](#️-security-implementation)
-19. [Testing the APIs](#-testing-the-apis)
-20. [Application Screenshots](#-application-screenshots)
-21. [Future Enhancements](#-future-enhancements)
-22. [Best Practices Followed](#-best-practices-followed)
-23. [Assignment Deliverables](#-assignment-deliverables)
-24. [Project Metrics](#-project-metrics)
-25. [Learning Outcomes](#-learning-outcomes)
-26. [Contributing](#-contributing)
-27. [License](#-license)
-28. [Support](#-support)
-29. [Author](#-author)
+5. [System Architecture](#️-system-architecture)
+6. [Technology Stack](#️-technology-stack)
+7. [Why This Tech Stack](#-why-this-tech-stack)
+8. [Project Structure](#-project-structure)
+9. [Getting Started](#-getting-started)
+10. [Environment Setup](#️-environment-setup)
+11. [Running the Application](#️-running-the-application)
+12. [API Documentation](#-api-documentation)
+13. [REST API Endpoints](#-rest-api-endpoints)
+14. [Database Collections](#️-database-collections)
+15. [Database Schema](#️-database-schema)
+16. [Authentication Flow](#-authentication-flow)
+17. [Security Implementation](#️-security-implementation)
+18. [Testing the APIs](#-testing-the-apis)
+19. [Application Screenshots](#-application-screenshots)
+20. [Future Enhancements](#-future-enhancements)
+21. [Project Metrics](#-project-metrics)
+22. [License](#-license)
+23. [Author](#-author)
 
 ---
 
@@ -294,27 +288,6 @@ Security has been implemented following modern backend development best practice
 | 🎭 Role-Based Authorization | ✅ |
 
 > Audit logging, advanced search, and pagination can be added or expanded based on future project requirements.
-
----
-
-# ✅ Assignment Completion Checklist
-
-| Requirement | Status |
-|-------------|:------:|
-| User Registration | ✅ |
-| User Login | ✅ |
-| JWT Authentication | ✅ |
-| Refresh Token | ✅ |
-| Password Hashing | ✅ |
-| Role-Based Access Control | ✅ |
-| Dashboard | ✅ |
-| CRUD Operations | ✅ |
-| Protected APIs | ✅ |
-| Request Validation | ✅ |
-| DTO Validation | ✅ |
-| CORS Configuration | ✅ |
-| Swagger Documentation | ✅ |
-| Responsive UI | ✅ |
 
 ---
 
@@ -838,80 +811,9 @@ The project is designed with scalability in mind. Planned improvements include:
 
 - Email Verification
 - Forgot Password
-- Password Reset
-- User Avatar Upload
-- Dashboard Charts
-- Advanced Analytics
-- Export Members to Excel
-- Export Members to PDF
-- Email Notifications
+- Dashboard Analytics
 - Docker Support
 - CI/CD Pipeline
-- Unit Testing
-- Integration Testing
-- Audit Dashboard
-- Activity Timeline
-- Advanced Search
-- Pagination Improvements
-- Multi-language Support
-
----
-
-# 💡 Best Practices Followed
-
-This project follows modern Full Stack engineering practices.
-
-## Backend
-
-- Modular Architecture
-- Feature Modules
-- Dependency Injection
-- DTO Validation
-- ValidationPipe
-- Exception Filters
-- Route Guards
-- JWT Strategy
-- Refresh Tokens
-- Clean Code
-- Reusable Services
-
-## Frontend
-
-- App Router
-- Reusable Components
-- Custom Hooks
-- Responsive Design
-- API Service Layer
-- Type Safety
-- Loading States
-- Error Handling
-
-## Security
-
-- Password Hashing
-- JWT Authentication
-- Protected APIs
-- Role Guards
-- Environment Variables
-- Input Validation
-- Secure REST APIs
-
----
-
-# 📋 Assignment Deliverables
-
-| Deliverable | Status |
-|-------------|:------:|
-| GitHub Repository | ✅ |
-| README Documentation | ✅ |
-| Swagger Documentation | ✅ |
-| Backend APIs | ✅ |
-| Frontend UI | ✅ |
-| Authentication | ✅ |
-| RBAC | ✅ |
-| CRUD Operations | ✅ |
-| Environment Setup Guide | ✅ |
-| .env.example | ✅ |
 
 ---
 
@@ -933,69 +835,11 @@ This project follows modern Full Stack engineering practices.
 
 ---
 
-# 🎯 Learning Outcomes
-
-During this project I gained hands-on experience with:
-
-- Enterprise Authentication
-- JWT Access & Refresh Tokens
-- Role-Based Access Control
-- NestJS Framework
-- Next.js App Router
-- MongoDB & Mongoose
-- REST API Development
-- Swagger Documentation
-- DTO Validation
-- Route Guards
-- TypeScript
-- Responsive UI Development
-- Git & GitHub Workflow
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome. If you'd like to improve this project:
-
-1. Fork the repository
-2. Create a new branch
-
-```bash
-git checkout -b feature-name
-```
-
-3. Commit your changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push
-
-```bash
-git push origin feature-name
-```
-
-5. Open a Pull Request
-
----
-
 # 📜 License
 
 This project is licensed under the MIT License.
 
 Feel free to use this repository for learning and educational purposes.
-
----
-
-# ⭐ Support
-
-If you found this repository useful:
-
-- ⭐ Star this repository
-- 🍴 Fork this repository
-- 💬 Share your feedback
-- 🐛 Report issues
 
 ---
 
@@ -1020,7 +864,5 @@ Thank you for taking the time to review this project.
 This project demonstrates modern Full Stack Development practices using Next.js, NestJS, MongoDB, JWT Authentication, and Role-Based Access Control.
 
 If you found this project helpful, consider giving it a ⭐ on GitHub.
-
-Made with ❤️ by **Gokul Kumar M**
 
 </div>
