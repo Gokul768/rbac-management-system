@@ -5,13 +5,18 @@ import { PassportModule } from '@nestjs/passport';
 import { MembersController } from './members.controller';
 import { MembersService } from './members.service';
 
-import { Member, MemberSchema } from './schemas/member.schema';
+import {
+  Member,
+  MemberSchema,
+} from './schemas/member.schema';
 
 import { AuthModule } from '../auth/auth.module';
+import { AuditModule } from '../audit/audit.module';
 
 @Module({
   imports: [
     AuthModule,
+    PassportModule,
 
     MongooseModule.forFeature([
       {
@@ -19,6 +24,8 @@ import { AuthModule } from '../auth/auth.module';
         schema: MemberSchema,
       },
     ]),
+
+    AuditModule,
   ],
 
   controllers: [MembersController],

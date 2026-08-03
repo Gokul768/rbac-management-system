@@ -23,6 +23,12 @@ export class Member {
   })
   phone!: string;
 
+  // ✅ ADD THIS
+  @Prop({
+    default: "Member",
+  })
+  role!: string;
+
   @Prop({
     default: true,
   })

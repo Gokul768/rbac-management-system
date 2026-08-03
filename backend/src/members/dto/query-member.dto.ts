@@ -1,17 +1,16 @@
 import {
-  IsIn,
-  IsNumberString,
   IsOptional,
   IsString,
-} from 'class-validator';
+} from "class-validator";
 
 export class QueryMemberDto {
+
   @IsOptional()
-  @IsNumberString()
+  @IsString()
   page?: string;
 
   @IsOptional()
-  @IsNumberString()
+  @IsString()
   limit?: string;
 
   @IsOptional()
@@ -23,6 +22,15 @@ export class QueryMemberDto {
   sortBy?: string;
 
   @IsOptional()
-  @IsIn(['asc', 'desc'])
-  order?: 'asc' | 'desc';
+  @IsString()
+  order?: string;
+
+  @IsOptional()
+  @IsString()
+  role?: string;
+
+  @IsOptional()
+  @IsString()
+  status?: string;
+
 }

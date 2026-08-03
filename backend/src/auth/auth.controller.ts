@@ -9,7 +9,13 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiBearerAuth,
+} from '@nestjs/swagger';
 
+@ApiTags('Authentication')
 @Controller('auth')
 export class AuthController {
   constructor(
@@ -17,6 +23,9 @@ export class AuthController {
   ) {}
 
   // Register
+  @ApiOperation({
+    summary: 'Register a new user',
+  })
   @Post('register')
   register(
     @Body() registerDto: RegisterDto,
@@ -25,6 +34,9 @@ export class AuthController {
   }
 
   // Login
+  @ApiOperation({
+    summary: 'User Login',
+  })
   @Post('login')
   login(
     @Body() loginDto: LoginDto,
@@ -33,6 +45,9 @@ export class AuthController {
   }
 
   // Refresh Access Token
+  @ApiOperation({
+    summary: 'Refresh Access Token',
+  })
   @Post('refresh')
   refreshToken(
     @Body() refreshTokenDto: RefreshTokenDto,
@@ -41,13 +56,15 @@ export class AuthController {
   }
 
   // Logout
-    // Logout
-@Post('logout')
-logout(
-  @Body() refreshTokenDto: RefreshTokenDto,
-) {
-  return this.authService.logout(
-    refreshTokenDto,
-  );
-}
+  @ApiOperation({
+    summary: 'User Logout',
+  })
+  @Post('logout')
+  logout(
+    @Body() refreshTokenDto: RefreshTokenDto,
+  ) {
+    return this.authService.logout(
+      refreshTokenDto,
+    );
+  }
 }

@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MembersModule } from './members/members.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AuditModule } from './audit/audit.module';
 
 @Module({
   imports: [
@@ -29,6 +30,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     MembersModule,
 
     DashboardModule,
+
+    AuditModule,
   ],
 
   controllers: [AppController],

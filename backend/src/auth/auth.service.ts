@@ -2,255 +2,257 @@ import {
   Injectable,
   BadRequestException,
   UnauthorizedException,
-} from '@nestjs/common';
+} from "@nestjs/common";
 
-import * as bcrypt from 'bcrypt';
-import { JwtService } from '@nestjs/jwt';
+import * as bcrypt from "bcrypt";
+import { JwtService } from "@nestjs/jwt";
 
-import { UsersService } from '../users/users.service';
-import { RegisterDto } from './dto/register.dto';
-import { LoginDto } from './dto/login.dto';
-import { RefreshTokenDto } from './dto/refresh-token.dto';
-import { RefreshTokenService } from './refresh-token.service';
+import { UsersService } from "../users/users.service";
 
+import { RegisterDto } from "./dto/register.dto";
+import { LoginDto } from "./dto/login.dto";
+import { RefreshTokenDto } from "./dto/refresh-token.dto";
+
+import { RefreshTokenService } from "./refresh-token.service";
 @Injectable()
 export class AuthService {
+
   constructor(
-  private readonly usersService: UsersService,
-  private readonly jwtService: JwtService,
-  private readonly refreshTokenService: RefreshTokenService,
-) {}
 
+    private readonly usersService: UsersService,
 
+    private readonly jwtService: JwtService,
+
+    private readonly refreshTokenService: RefreshTokenService,
+
+  ) {}
   // ================= REGISTER =================
 
-  async register(registerDto: RegisterDto) {
+async register(
+  registerDto: RegisterDto,
+) {
 
-    const {
-      name,
+  const {
+    name,
+    email,
+    password,
+    role,
+  } = registerDto;
+
+  const existingUser =
+    await this.usersService.findByEmail(
       email,
-      password,
-      role,
-    } = registerDto;
+    );
 
-
-    const existingUser =
-      await this.usersService.findByEmail(email);
-
-
-    if (existingUser) {
-      throw new BadRequestException(
-        'Email already exists',
-      );
-    }
-
-
-    const hashedPassword =
-      await bcrypt.hash(password, 10);
-
-
-
-    const user =
-      await this.usersService.create({
-
-        name,
-
-        email,
-
-        password: hashedPassword,
-
-        role,
-
-      });
-
-
-
-    return {
-
-      message: 'User registered successfully',
-
-
-      user: {
-
-        id: user._id,
-
-        name: user.name,
-
-        email: user.email,
-
-        role: user.role,
-
-        status: user.status,
-
-      },
-
-    };
-
+  if (existingUser) {
+    throw new BadRequestException(
+      "Email already exists",
+    );
   }
 
+  const hashedPassword =
+    await bcrypt.hash(password, 10);
 
+  const user =
+    await this.usersService.create({
 
+      name,
 
-  // ================= LOGIN =================
-
-  async login(loginDto: LoginDto) {
-
-    const {
       email,
-      password,
-    } = loginDto;
 
+      password: hashedPassword,
 
+      role,
 
-    // password hidden in schema, so fetch manually
-    const user =
-  await this.usersService.findByEmailWithPassword(email);
+    });
 
+  return {
 
+    message:
+      "User registered successfully",
 
-    if (!user) {
+    user: {
 
-      throw new UnauthorizedException(
-        'Invalid credentials',
-      );
+      id: user._id,
 
-    }
-
-
-
-    const isPasswordValid =
-      await bcrypt.compare(
-        password,
-        user.password,
-      );
-
-
-
-    if (!isPasswordValid) {
-
-      throw new UnauthorizedException(
-        'Invalid credentials',
-      );
-
-    }
-
-    console.log("USER FROM DATABASE:", user);
-console.log("ROLE FROM DATABASE:", user.role);
-
-
-
-    const payload = {
-
-      sub: user._id,
+      name: user.name,
 
       email: user.email,
 
       role: user.role,
 
-    };
+      status: user.status,
 
+    },
 
+  };
 
-    const accessToken =
-      await this.jwtService.signAsync(
-        payload,
-        {
+}
+// ================= LOGIN =================
 
-          secret:
-            process.env.JWT_ACCESS_SECRET ||
-            'access_secret_123456',
+async login(
+  loginDto: LoginDto,
+) {
 
-          expiresIn: 900,
+  const {
+    email,
+    password,
+  } = loginDto;
 
-        },
+  const user =
+    await this.usersService
+      .findByEmailWithPassword(
+        email,
       );
 
+  if (!user) {
 
-
-    const refreshToken =
-      await this.jwtService.signAsync(
-        payload,
-        {
-
-          secret:
-            process.env.JWT_REFRESH_SECRET ||
-            'refresh_secret_123456',
-
-          expiresIn: 604800,
-
-        },
-      );
-      // Save Refresh Token in MongoDB
-await this.refreshTokenService.create(
-  user._id.toString(),
-  refreshToken,
-  new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
-);
-
-
-
-    return {
-
-      message: 'Login successful',
-
-
-      accessToken,
-
-
-      refreshToken,
-
-
-      user: {
-
-        id: user._id,
-
-        name: user.name,
-
-        email: user.email,
-
-        role: user.role,
-
-      },
-
-    };
+    throw new UnauthorizedException(
+      "Invalid credentials",
+    );
 
   }
 
+  const isPasswordValid =
+    await bcrypt.compare(
+      password,
+      user.password,
+    );
 
+  if (!isPasswordValid) {
 
+    throw new UnauthorizedException(
+      "Invalid credentials",
+    );
 
+  }
 
-  // ================= REFRESH TOKEN =================
+  const payload = {
 
-  async refreshToken(
-  refreshTokenDto: RefreshTokenDto,
-) {
-  const { refreshToken } = refreshTokenDto;
+    sub: user._id,
 
-  try {
-    // Verify JWT
-    const payload = await this.jwtService.verifyAsync(
-      refreshToken,
+    email: user.email,
+
+    role: user.role,
+
+  };
+
+  const accessToken =
+    await this.jwtService.signAsync(
+      payload,
       {
+
         secret:
-          process.env.JWT_REFRESH_SECRET ||
-          'refresh_secret_123456',
+          process.env.JWT_ACCESS_SECRET ||
+          "access_secret_123456",
+
+        expiresIn: 900,
+
       },
     );
 
-    // Check if token exists in MongoDB
+  const refreshToken =
+    await this.jwtService.signAsync(
+      payload,
+      {
+
+        secret:
+          process.env.JWT_REFRESH_SECRET ||
+          "refresh_secret_123456",
+
+        expiresIn: 604800,
+
+      },
+    );
+
+  await this.refreshTokenService.create(
+
+    user._id.toString(),
+
+    refreshToken,
+
+    new Date(
+      Date.now() +
+      7 * 24 * 60 * 60 * 1000,
+    ),
+
+  );
+
+  return {
+
+    message: "Login successful",
+
+    accessToken,
+
+    refreshToken,
+
+    user: {
+
+      id: user._id,
+
+      name: user.name,
+
+      email: user.email,
+
+      role: user.role,
+
+    },
+
+  };
+
+}
+// ================= REFRESH TOKEN =================
+
+async refreshToken(
+  refreshTokenDto: RefreshTokenDto,
+) {
+
+  const { refreshToken } = refreshTokenDto;
+
+  try {
+
+    // Verify Refresh Token
+    const payload =
+      await this.jwtService.verifyAsync(
+        refreshToken,
+        {
+          secret:
+            process.env.JWT_REFRESH_SECRET ||
+            "refresh_secret_123456",
+        },
+      );
+
+    // Check Refresh Token in MongoDB
     const storedToken =
       await this.refreshTokenService.findToken(
         refreshToken,
       );
 
     if (!storedToken) {
+
       throw new UnauthorizedException(
-        'Refresh Token not found',
+        "Refresh Token not found",
       );
+
     }
 
-    // Generate new Access Token
+    // Check Expiry
+    if (
+      storedToken.expiresAt <
+      new Date()
+    ) {
+
+      await this.refreshTokenService.removeToken(
+        refreshToken,
+      );
+
+      throw new UnauthorizedException(
+        "Refresh Token Expired",
+      );
+
+    }
+
+    // Generate New Access Token
     const accessToken =
       await this.jwtService.signAsync(
         {
@@ -261,35 +263,36 @@ await this.refreshTokenService.create(
         {
           secret:
             process.env.JWT_ACCESS_SECRET ||
-            'access_secret_123456',
+            "access_secret_123456",
+
           expiresIn: 900,
         },
       );
 
     return {
+
       message:
-        'Access token refreshed successfully',
+        "Access Token Refreshed Successfully",
+
       accessToken,
+
     };
 
-  } catch {
+  } catch (error) {
+
     throw new UnauthorizedException(
-      'Invalid Refresh Token',
+      "Invalid Refresh Token",
     );
+
   }
+
 }
-
-
-
-
-
-
-
-  // ================= LOGOUT =================
+// ================= LOGOUT =================
 
 async logout(
   refreshTokenDto: RefreshTokenDto,
 ) {
+
   const { refreshToken } = refreshTokenDto;
 
   const storedToken =
@@ -298,9 +301,11 @@ async logout(
     );
 
   if (!storedToken) {
+
     throw new UnauthorizedException(
-      'Invalid Refresh Token',
+      "Invalid Refresh Token",
     );
+
   }
 
   await this.refreshTokenService.removeToken(
@@ -308,7 +313,10 @@ async logout(
   );
 
   return {
-    message: 'Logged out successfully',
+
+    message: "Logged out successfully",
+
   };
+
 }
 }

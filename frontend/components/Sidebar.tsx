@@ -1,10 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+
+import {
+  LayoutDashboard,
+  Users,
+  UserCircle,
+  LogOut,
+} from "lucide-react";
 
 export default function Sidebar() {
-  const pathname = usePathname();
   const router = useRouter();
 
   const logout = () => {
@@ -12,71 +18,90 @@ export default function Sidebar() {
     localStorage.removeItem("refreshToken");
     localStorage.removeItem("user");
 
-    router.push("/login");
+    router.replace("/login");
   };
 
-  const menus = [
-    {
-      name: "Dashboard",
-      path: "/dashboard",
-      icon: "📊",
-    },
-    {
-      name: "Members",
-      path: "/members",
-      icon: "👥",
-    },
-    {
-      name: "Profile",
-      path: "/profile",
-      icon: "👤",
-    },
-  ];
-
   return (
-    <aside className="w-64 min-h-screen bg-gray-900 text-white flex flex-col">
-
-      <div className="text-2xl font-bold p-6 border-b border-gray-700">
+    <aside
+      className="
+        w-64
+        min-h-screen
+        bg-white
+        dark:bg-gray-800
+        border-r
+        border-gray-200
+        dark:border-gray-700
+        text-black
+        dark:text-white
+        p-5
+        transition-colors
+        duration-300
+      "
+    >
+      <h1 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-8">
         RBAC Admin
-      </div>
+      </h1>
 
-      <nav className="flex-1 p-4 space-y-2">
+      <nav className="space-y-3">
+        <Link
+          href="/dashboard"
+          className="
+            flex items-center gap-3
+            p-3 rounded-lg
+            hover:bg-gray-100
+            dark:hover:bg-gray-700
+            transition
+          "
+        >
+          <LayoutDashboard size={20} />
+          Dashboard
+        </Link>
 
-        {menus.map((menu) => (
+        <Link
+          href="/members"
+          className="
+            flex items-center gap-3
+            p-3 rounded-lg
+            hover:bg-gray-100
+            dark:hover:bg-gray-700
+            transition
+          "
+        >
+          <Users size={20} />
+          Members
+        </Link>
 
-          <Link
-            key={menu.path}
-            href={menu.path}
-            className={`flex items-center gap-3 p-3 rounded-lg transition
-
-              ${
-                pathname === menu.path
-                  ? "bg-blue-600"
-                  : "hover:bg-gray-700"
-              }
-
-            `}
-          >
-            <span>{menu.icon}</span>
-
-            <span>{menu.name}</span>
-          </Link>
-
-        ))}
-
-      </nav>
-
-      <div className="p-4 border-t border-gray-700">
+        <Link
+          href="/profile"
+          className="
+            flex items-center gap-3
+            p-3 rounded-lg
+            hover:bg-gray-100
+            dark:hover:bg-gray-700
+            transition
+          "
+        >
+          <UserCircle size={20} />
+          Profile
+        </Link>
 
         <button
           onClick={logout}
-          className="w-full bg-red-600 hover:bg-red-700 py-2 rounded"
+          className="
+            flex items-center gap-3
+            p-3 rounded-lg
+            w-full
+            text-red-600
+            dark:text-red-400
+            hover:bg-red-100
+            dark:hover:bg-red-900/40
+            transition
+          "
         >
-          🚪 Logout
+          <LogOut size={20} />
+          Logout
         </button>
-
-      </div>
-
+      </nav>
     </aside>
   );
 }
