@@ -10,33 +10,20 @@
 
 ⭐ Built with **Next.js + NestJS + MongoDB**
 
-🔐 Secure JWT Authentication
-
-🎭 Role-Based Authorization (RBAC)
-
+🔐 Secure JWT Authentication  
+🎭 Role-Based Authorization (RBAC)  
 🚀 Production-Ready Architecture
 
 ---
 
 <p>
-
 A modern Full Stack Role-Based Access Control (RBAC) application built using
-
-<strong>Next.js</strong>,
-<strong>NestJS</strong>,
-<strong>MongoDB</strong>,
-<strong>TypeScript</strong>,
-and
-<strong>JWT Authentication</strong>.
-
+<strong>Next.js</strong>, <strong>NestJS</strong>, <strong>MongoDB</strong>,
+<strong>TypeScript</strong>, and <strong>JWT Authentication</strong>.
 </p>
 
-
-
 <p>
-
 Designed as a professional Full Stack Developer Interview Assignment demonstrating modern authentication, authorization, secure REST APIs, scalable backend architecture, responsive frontend development, and enterprise software engineering practices.
-
 </p>
 
 ---
@@ -51,6 +38,40 @@ Designed as a professional Full Stack Developer Interview Assignment demonstrati
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
 </div>
+
+---
+
+## 📑 Table of Contents
+
+1. [Demo Preview](#-demo-preview)
+2. [Project Overview](#-project-overview)
+3. [Project Objectives](#-project-objectives)
+4. [Key Features](#-key-features)
+5. [Assignment Completion Checklist](#-assignment-completion-checklist)
+6. [System Architecture](#️-system-architecture)
+7. [Technology Stack](#️-technology-stack)
+8. [Why This Tech Stack](#-why-this-tech-stack)
+9. [Project Structure](#-project-structure)
+10. [Getting Started](#-getting-started)
+11. [Environment Setup](#️-environment-setup)
+12. [Running the Application](#️-running-the-application)
+13. [API Documentation](#-api-documentation)
+14. [REST API Endpoints](#-rest-api-endpoints)
+15. [Database Collections](#️-database-collections)
+16. [Database Schema](#️-database-schema)
+17. [Authentication Flow](#-authentication-flow)
+18. [Security Implementation](#️-security-implementation)
+19. [Testing the APIs](#-testing-the-apis)
+20. [Application Screenshots](#-application-screenshots)
+21. [Future Enhancements](#-future-enhancements)
+22. [Best Practices Followed](#-best-practices-followed)
+23. [Assignment Deliverables](#-assignment-deliverables)
+24. [Project Metrics](#-project-metrics)
+25. [Learning Outcomes](#-learning-outcomes)
+26. [Contributing](#-contributing)
+27. [License](#-license)
+28. [Support](#-support)
+29. [Author](#-author)
 
 ---
 
@@ -130,8 +151,6 @@ The project focuses on implementing real-world enterprise authentication and aut
 
 The application provides a secure authentication system following modern industry standards.
 
-### Features
-
 - ✅ User Registration
 - ✅ Secure Login
 - ✅ JWT Access Token Authentication
@@ -157,12 +176,10 @@ The application follows a Role-Based Access Control (RBAC) model where permissio
 | 🛡️ Manager | Can manage members except deletion |
 | 👤 Member | Read-only access |
 
----
-
-## 🔑 Permission Matrix
+### 🔑 Permission Matrix
 
 | Feature | 👑 Admin | 🛡️ Manager | 👤 Member |
-|----------|:--------:|:----------:|:---------:|
+|---------|:--------:|:----------:|:---------:|
 | Dashboard | ✅ | ✅ | ✅ |
 | View Members | ✅ | ✅ | ✅ |
 | View Member Details | ✅ | ✅ | ✅ |
@@ -176,47 +193,16 @@ The application follows a Role-Based Access Control (RBAC) model where permissio
 
 ## 📊 Dashboard
 
-The dashboard provides a quick overview of the system through a clean and responsive interface.
+The dashboard provides administrators and authorized users with a quick overview of the application's current state, using a modern responsive card-based layout that works across desktop, tablet, and mobile devices.
 
-### Dashboard Includes
-
-- 👥 Total Users
-- 👑 Total Admins
-- 🛡️ Total Managers
-- 👤 Total Members
-
----
-
-## 👨‍💼 Member Management
-
-The Member Management module provides secure CRUD functionality protected by RBAC permissions.
-
-### Current Features
-
-- ➕ Create Member
-- 👀 View Member
-- ✏️ Edit Member
-- ❌ Delete Member
-- 📱 Responsive Table Layout
-- 🌙 Dark Mode Support
-
-> Additional enhancements such as advanced search and pagination can be integrated based on project requirements.
-
----
-# 📊 Dashboard Features
-
-The Dashboard provides administrators and authorized users with a quick overview of the application's current state.
-
-It is designed using a modern responsive card-based layout that works across desktop, tablet, and mobile devices.
-
-## Dashboard Widgets
+### Dashboard Widgets
 
 - 👥 Total Users
 - 👑 Total Admins
 - 🛡️ Total Managers
 - 👤 Total Members
 
-## Dashboard Highlights
+### Dashboard Highlights
 
 - ✅ Responsive Card Layout
 - ✅ Clean Modern UI
@@ -227,11 +213,11 @@ It is designed using a modern responsive card-based layout that works across des
 
 ---
 
-# 👨‍💼 Member Management
+## 👨‍💼 Member Management
 
 The Member Management module enables authorized users to perform CRUD operations while respecting Role-Based Access Control permissions.
 
-## Available Operations
+### Available Operations
 
 | Operation | Admin | Manager | Member |
 |-----------|:-----:|:-------:|:------:|
@@ -241,7 +227,7 @@ The Member Management module enables authorized users to perform CRUD operations
 | Update Member | ✅ | ✅ | ❌ |
 | Delete Member | ✅ | ❌ | ❌ |
 
-## Module Highlights
+### Module Highlights
 
 - ➕ Create Members
 - 👀 View Member Details
@@ -254,11 +240,9 @@ The Member Management module enables authorized users to perform CRUD operations
 
 ---
 
-# 👤 Profile Management
+## 👤 Profile Management
 
 Each authenticated user has access to their own profile.
-
-## Features
 
 - View Profile Information
 - Display User Role
@@ -268,11 +252,11 @@ Each authenticated user has access to their own profile.
 
 ---
 
-# 🛡️ Security Features
+## 🛡️ Security Features
 
 Security has been implemented following modern backend development best practices.
 
-## Authentication Security
+### Authentication Security
 
 - ✅ JWT Access Token
 - ✅ JWT Refresh Token
@@ -280,14 +264,14 @@ Security has been implemented following modern backend development best practice
 - ✅ Protected API Routes
 - ✅ Authentication Guards
 
-## Authorization Security
+### Authorization Security
 
 - ✅ Role-Based Access Control
 - ✅ Role Guards
 - ✅ Protected Resources
 - ✅ Permission-Based Access
 
-## Backend Security
+### Backend Security
 
 - ✅ DTO Validation
 - ✅ ValidationPipe
@@ -298,10 +282,10 @@ Security has been implemented following modern backend development best practice
 
 ---
 
-# 🎁 Additional Features
+## 🎁 Additional Features
 
 | Feature | Status |
-|----------|:------:|
+|---------|:------:|
 | 🌙 Dark Mode | ✅ |
 | 📘 Swagger API Documentation | ✅ |
 | 🔐 JWT Refresh Token | ✅ |
@@ -394,8 +378,6 @@ Security has been implemented following modern backend development best practice
 | Axios | API Communication |
 | Lucide React | Icons |
 
----
-
 ## ⚙️ Backend
 
 | Technology | Purpose |
@@ -407,8 +389,6 @@ Security has been implemented following modern backend development best practice
 | Passport JWT | Route Protection |
 | bcrypt | Password Hashing |
 | Swagger | API Documentation |
-
----
 
 ## 🧰 Development Tools
 
@@ -455,6 +435,7 @@ This project adopts technologies commonly used in enterprise software developmen
 - Reduced Runtime Errors
 
 ---
+
 # 📂 Project Structure
 
 The project follows a clean and modular Full Stack architecture by separating the frontend and backend into independent applications.
@@ -510,9 +491,7 @@ enterprise-rbac-management-system
 
 Follow the steps below to set up the project locally.
 
----
-
-# 📥 Clone Repository
+## 📥 Clone Repository
 
 ```bash
 git clone https://github.com/Gokul768/rbac-management-system.git
@@ -524,9 +503,7 @@ Move into the project folder.
 cd rbac-management-system
 ```
 
----
-
-# 📦 Backend Installation
+## 📦 Backend Installation
 
 Navigate to the backend directory.
 
@@ -552,9 +529,7 @@ Backend runs on:
 http://localhost:5000
 ```
 
----
-
-# 💻 Frontend Installation
+## 💻 Frontend Installation
 
 Navigate to the frontend directory.
 
@@ -586,17 +561,9 @@ http://localhost:3000
 
 Create the environment files before running the project.
 
----
-
 ## Backend
 
-Create
-
-```text
-backend/.env
-```
-
-Example
+Create `backend/.env`
 
 ```env
 PORT=5000
@@ -612,25 +579,15 @@ JWT_EXPIRES_IN=15m
 JWT_REFRESH_EXPIRES_IN=7d
 ```
 
----
-
 ## Frontend
 
-Create
-
-```text
-frontend/.env.local
-```
-
-Example
+Create `frontend/.env.local`
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
----
-
-# 📄 .env.example
+## 📄 .env.example
 
 For open-source contributors, an example environment file is included.
 
@@ -663,8 +620,6 @@ JWT_REFRESH_EXPIRES_IN=
 ```bash
 npm run start:dev
 ```
-
----
 
 ## Frontend
 
@@ -700,19 +655,17 @@ Swagger provides:
 ## Authentication
 
 | Method | Endpoint | Description |
-|---------|----------|-------------|
+|--------|----------|-------------|
 | POST | /auth/register | Register User |
 | POST | /auth/login | Login |
 | POST | /auth/refresh | Refresh Token |
 | POST | /auth/logout | Logout |
 | GET | /auth/profile | User Profile |
 
----
-
 ## Members
 
 | Method | Endpoint | Description |
-|---------|----------|-------------|
+|--------|----------|-------------|
 | GET | /members | Get Members |
 | GET | /members/:id | Get Member |
 | POST | /members | Create Member |
@@ -730,6 +683,7 @@ The application uses MongoDB with separate collections.
 | Users | Stores registered users |
 | Members | Stores member information |
 | Refresh Tokens | Stores active refresh tokens |
+| Audit Logs | Stores system activity records |
 
 ---
 
@@ -744,7 +698,9 @@ The database schema includes:
 - Refresh Tokens Collection
 - Audit Logs Collection
 
-![RBAC Database Schema](./assets/database-schema.png)
+<p align="center">
+  <img src="./assets/database-schema.png" alt="RBAC Database Schema" width="100%">
+</p>
 
 ---
 
@@ -778,7 +734,7 @@ The database schema includes:
 Security follows enterprise best practices.
 
 | Security Feature | Status |
-|------------------|:------:|
+|-------------------|:------:|
 | Password Hashing | ✅ |
 | JWT Authentication | ✅ |
 | Refresh Tokens | ✅ |
@@ -810,11 +766,10 @@ Recommended flow:
 5. Test Protected APIs
 
 ---
+
 # 📸 Application Screenshots
 
 > Screenshots will be added after deployment.
-
----
 
 ## 🔐 Login Page
 
@@ -824,8 +779,6 @@ Displays secure authentication with JWT.
 /screenshots/login.png
 ```
 
----
-
 ## 📝 Registration Page
 
 New users can create an account.
@@ -833,8 +786,6 @@ New users can create an account.
 ```text
 /screenshots/register.png
 ```
-
----
 
 ## 📊 Dashboard
 
@@ -844,8 +795,6 @@ Displays application statistics.
 /screenshots/dashboard.png
 ```
 
----
-
 ## 👥 Members
 
 Manage members according to user role.
@@ -854,8 +803,6 @@ Manage members according to user role.
 /screenshots/members.png
 ```
 
----
-
 ## 👤 Profile
 
 Displays authenticated user's information.
@@ -863,8 +810,6 @@ Displays authenticated user's information.
 ```text
 /screenshots/profile.png
 ```
-
----
 
 ## 🌙 Dark Mode
 
@@ -876,11 +821,9 @@ Responsive dark theme.
 
 ---
 
+# ☁️ Database Deployment
 
-
-## Database
-
-MongoDB Atlas
+## MongoDB Atlas
 
 - Create Cluster
 - Create Database User
@@ -891,9 +834,7 @@ MongoDB Atlas
 
 # 📈 Future Enhancements
 
-The project is designed with scalability in mind.
-
-Planned improvements include:
+The project is designed with scalability in mind. Planned improvements include:
 
 - Email Verification
 - Forgot Password
@@ -934,8 +875,6 @@ This project follows modern Full Stack engineering practices.
 - Clean Code
 - Reusable Services
 
----
-
 ## Frontend
 
 - App Router
@@ -946,8 +885,6 @@ This project follows modern Full Stack engineering practices.
 - Type Safety
 - Loading States
 - Error Handling
-
----
 
 ## Security
 
@@ -981,7 +918,7 @@ This project follows modern Full Stack engineering practices.
 # 📊 Project Metrics
 
 | Metric | Value |
-|---------|------:|
+|--------|------:|
 | Frontend | Next.js 15/16 |
 | Backend | NestJS |
 | Database | MongoDB |
@@ -1018,9 +955,7 @@ During this project I gained hands-on experience with:
 
 # 🤝 Contributing
 
-Contributions are welcome.
-
-If you'd like to improve this project:
+Contributions are welcome. If you'd like to improve this project:
 
 1. Fork the repository
 2. Create a new branch
@@ -1055,15 +990,12 @@ Feel free to use this repository for learning and educational purposes.
 
 # ⭐ Support
 
-If you found this repository useful,
+If you found this repository useful:
 
-⭐ Star this repository
-
-🍴 Fork this repository
-
-💬 Share your feedback
-
-🐛 Report issues
+- ⭐ Star this repository
+- 🍴 Fork this repository
+- 💬 Share your feedback
+- 🐛 Report issues
 
 ---
 
@@ -1073,15 +1005,9 @@ If you found this repository useful,
 
 Full Stack Developer
 
-### Connect
+**GitHub:** https://github.com/Gokul768
 
-**GitHub**
-
-https://github.com/Gokul768
-
-**LinkedIn**
-
-https://www.linkedin.com/in/gokulkumar-m-8aa977355
+**LinkedIn:** https://www.linkedin.com/in/gokulkumar-m-8aa977355
 
 ---
 
