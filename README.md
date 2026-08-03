@@ -733,6 +733,21 @@ The application uses MongoDB with separate collections.
 
 ---
 
+# 🗄️ Database Schema
+
+The application uses MongoDB collections with proper data modeling and relationships.
+
+The database schema includes:
+
+- Users Collection
+- Members Collection
+- Refresh Tokens Collection
+- Audit Logs Collection
+
+![RBAC Database Schema](./assets/database-schema.png)
+
+---
+
 # 🔐 Authentication Flow
 
 ```text
