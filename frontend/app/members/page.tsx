@@ -32,8 +32,8 @@ export default function MembersPage() {
   const [roleFilter, setRoleFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
 
-  // Sorting States
-  const [sortBy, setSortBy] = useState("createdAt");
+  // Sorting States (Default set to "name")
+  const [sortBy, setSortBy] = useState("name");
   const [order, setOrder] = useState("desc");
 
   // Pagination
@@ -108,14 +108,15 @@ export default function MembersPage() {
     }
   };
 
-  if (loading || !user) {
+  // Check auth user only for page-level blocking
+  if (!user) {
     return (
       <Layout>
         <div className="p-8 bg-gray-100 dark:bg-gray-900 min-h-screen transition-colors duration-300">
           <div className="flex flex-col items-center justify-center pt-20 gap-4">
             <div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
             <p className="text-gray-600 dark:text-gray-300 font-medium">
-              Loading Members...
+              Authenticating...
             </p>
           </div>
         </div>
@@ -156,17 +157,6 @@ export default function MembersPage() {
               <option value="All">All Status</option>
               <option value="Active">Active</option>
               <option value="Inactive">Inactive</option>
-            </select>
-
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-              <option value="createdAt">Created Date</option>
-              <option value="name">Name</option>
-              <option value="email">Email</option>
-              <option value="role">Role</option>
             </select>
 
             
@@ -212,7 +202,19 @@ export default function MembersPage() {
               </tr>
             </thead>
             <tbody>
-              {members.length > 0 ? (
+              {loading ? (
+                <tr>
+                  <td
+                    colSpan={6}
+                    className="text-center p-8 text-gray-500 dark:text-gray-400"
+                  >
+                    <div className="flex items-center justify-center gap-3">
+                      <div className="h-5 w-5 animate-spin rounded-full border-2 border-blue-600 border-t-transparent"></div>
+                      <span>Loading Members...</span>
+                    </div>
+                  </td>
+                </tr>
+              ) : members.length > 0 ? (
                 members.map((member) => (
                   <tr
                     key={member._id}
