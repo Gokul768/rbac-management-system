@@ -48,16 +48,16 @@ Designed as a professional Full Stack Developer Interview Assignment demonstrati
 3. [Project Objectives](#-project-objectives)
 4. [Key Features](#-key-features)
 5. [System Architecture](#️-system-architecture)
-6. [Technology Stack](#️-technology-stack)
-7. [Why This Tech Stack](#-why-this-tech-stack)
-8. [Project Structure](#-project-structure)
-9. [Getting Started](#-getting-started)
-10. [Environment Setup](#️-environment-setup)
-11. [Running the Application](#️-running-the-application)
-12. [API Documentation](#-api-documentation)
-13. [REST API Endpoints](#-rest-api-endpoints)
-14. [Database Collections](#️-database-collections)
-15. [Database Schema](#️-database-schema)
+6. [Database Schema](#️-database-schema)
+7. [Technology Stack](#️-technology-stack)
+8. [Why This Tech Stack](#-why-this-tech-stack)
+9. [Project Structure](#-project-structure)
+10. [Getting Started](#-getting-started)
+11. [Environment Setup](#️-environment-setup)
+12. [Running the Application](#️-running-the-application)
+13. [API Documentation](#-api-documentation)
+14. [REST API Endpoints](#-rest-api-endpoints)
+15. [Database Collections](#️-database-collections)
 16. [Authentication Flow](#-authentication-flow)
 17. [Security Implementation](#️-security-implementation)
 18. [Testing the APIs](#-testing-the-apis)
@@ -336,6 +336,23 @@ Security has been implemented following modern backend development best practice
                  │ • Refresh Tokens             │
                  └──────────────────────────────┘
 ```
+
+---
+
+# 🗄️ Database Schema
+
+The application uses MongoDB collections with proper data modeling and relationships.
+
+The database schema includes:
+
+- Users Collection
+- Members Collection
+- Refresh Tokens Collection
+- Audit Logs Collection
+
+<p align="center">
+  <img src="./assets/database-schema.png" alt="RBAC Database Schema" width="100%">
+</p>
 
 ---
 
@@ -657,23 +674,6 @@ The application uses MongoDB with separate collections.
 | Members | Stores member information |
 | Refresh Tokens | Stores active refresh tokens |
 | Audit Logs | Stores system activity records |
-
----
-
-# 🗄️ Database Schema
-
-The application uses MongoDB collections with proper data modeling and relationships.
-
-The database schema includes:
-
-- Users Collection
-- Members Collection
-- Refresh Tokens Collection
-- Audit Logs Collection
-
-<p align="center">
-  <img src="./assets/database-schema.png" alt="RBAC Database Schema" width="100%">
-</p>
 
 ---
 
