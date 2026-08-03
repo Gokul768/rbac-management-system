@@ -1,20 +1,39 @@
 <div align="center">
 
-# 🚀 RBAC Management System
+# 🚀 Enterprise RBAC Management System
 
-### Enterprise-Ready Role-Based Access Control (RBAC) Web Application
+### Secure • Scalable • Enterprise-Ready Role-Based Access Control Web Application
+
+⭐ Built with **Next.js + NestJS + MongoDB**
+
+🔐 Secure JWT Authentication
+
+🎭 Role-Based Authorization (RBAC)
+
+🚀 Production-Ready Architecture
+
+---
 
 <p>
-A secure and scalable Full Stack RBAC application built using
+
+A modern Full Stack Role-Based Access Control (RBAC) application built using
+
 <strong>Next.js</strong>,
 <strong>NestJS</strong>,
-<strong>MongoDB</strong>, and
+<strong>MongoDB</strong>,
+<strong>TypeScript</strong>,
+and
 <strong>JWT Authentication</strong>.
+
 </p>
 
 <p>
-Designed as a professional Full Stack Developer Interview Assignment to demonstrate modern authentication, authorization, secure API development, dashboard analytics, member management, audit logging, and responsive UI development.
+
+Designed as a professional Full Stack Developer Interview Assignment demonstrating modern authentication, authorization, secure REST APIs, scalable backend architecture, responsive frontend development, and enterprise software engineering practices.
+
 </p>
+
+---
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![NestJS](https://img.shields.io/badge/NestJS-11-E0234E?logo=nestjs)
@@ -29,57 +48,106 @@ Designed as a professional Full Stack Developer Interview Assignment to demonstr
 
 ---
 
-# 📖 Project Overview
+# 🎥 Demo Preview
 
-RBAC Management System is a modern Full Stack web application that provides secure authentication, role-based authorization, member management, dashboard analytics, and audit logging.
+## Application Flow
 
-The application follows industry-standard security practices including JWT Access & Refresh Tokens, password hashing using bcrypt, protected APIs, and Role-Based Access Control (RBAC).
+```text
+User Registration
+        │
+        ▼
+Secure Login
+        │
+        ▼
+JWT Authentication
+        │
+        ▼
+Role-Based Dashboard
+        │
+        ▼
+Member Management
+        │
+        ▼
+Profile Management
+        │
+        ▼
+Logout
+```
 
-It was developed as a Full Stack Developer Interview Assignment to demonstrate clean architecture, scalable backend development, secure REST APIs, responsive frontend development, and modern UI/UX practices.
+> 📸 Screenshots and live demo will be added after deployment.
 
 ---
 
-## 🎯 Project Objectives
+# 📖 Project Overview
+
+The **Enterprise RBAC Management System** is a modern Full Stack web application that demonstrates secure authentication, authorization, role-based access control, dashboard analytics, and member management.
+
+The project was developed following enterprise software architecture principles using **Next.js**, **NestJS**, and **MongoDB** while implementing secure authentication through **JWT Access Tokens** and **Refresh Tokens**.
+
+This project demonstrates production-level coding practices including:
+
+- Secure Authentication
+- Role-Based Authorization
+- RESTful API Design
+- Modular Backend Architecture
+- Responsive Frontend Development
+- Clean Folder Structure
+- Type Safety with TypeScript
+- API Documentation using Swagger
+
+The objective is to showcase how enterprise applications manage users, permissions, authentication, and protected resources using scalable backend architecture.
+
+---
+
+# 🎯 Project Objectives
+
+The project focuses on implementing real-world enterprise authentication and authorization workflows.
+
+## Primary Goals
 
 - Build a secure authentication system
 - Implement Role-Based Access Control (RBAC)
-- Manage users through CRUD operations
-- Provide an Admin Dashboard with statistics
-- Demonstrate secure REST API development
-- Showcase clean Full Stack architecture
-- Follow industry-standard coding practices
+- Protect REST APIs using JWT
+- Develop reusable backend architecture
+- Demonstrate scalable NestJS modules
+- Build responsive Next.js UI
+- Implement secure CRUD operations
+- Follow enterprise coding standards
+- Demonstrate clean software architecture
+- Create production-ready documentation
 
 ---
+
 # ✨ Key Features
 
 ## 🔐 Authentication
 
-The application provides a secure authentication system using industry-standard practices.
+The application provides a secure authentication system following modern industry standards.
 
 ### Features
 
-- User Registration
-- Secure User Login
-- JWT Access Token Authentication (15 Minutes)
-- JWT Refresh Token Authentication (7 Days)
-- Password Hashing using bcrypt
-- Protected Routes
-- Token Refresh Mechanism
-- Logout Support
-- Input Validation
-- Secure API Authorization
+- ✅ User Registration
+- ✅ Secure Login
+- ✅ JWT Access Token Authentication
+- ✅ Refresh Token Authentication
+- ✅ Password Hashing using bcrypt
+- ✅ Protected Routes
+- ✅ Route Guards
+- ✅ Logout Support
+- ✅ Request Validation
+- ✅ Secure API Authorization
 
 ---
 
-## 👥 Role-Based Access Control (RBAC)
+## 👥 Role-Based Access Control
 
-The application follows a Role-Based Access Control (RBAC) model where permissions are granted based on user roles.
+The application follows a Role-Based Access Control (RBAC) model where permissions are granted according to user roles.
 
 ### Available Roles
 
 | Role | Description |
 |------|-------------|
-| 👑 Admin | Full access to the entire system |
+| 👑 Admin | Complete access to the system |
 | 🛡️ Manager | Can manage members except deletion |
 | 👤 Member | Read-only access |
 
@@ -89,7 +157,7 @@ The application follows a Role-Based Access Control (RBAC) model where permissio
 
 | Feature | 👑 Admin | 🛡️ Manager | 👤 Member |
 |----------|:--------:|:----------:|:---------:|
-| View Dashboard | ✅ | ✅ | ✅ |
+| Dashboard | ✅ | ✅ | ✅ |
 | View Members | ✅ | ✅ | ✅ |
 | View Member Details | ✅ | ✅ | ✅ |
 | Create Member | ✅ | ✅ | ❌ |
@@ -100,73 +168,142 @@ The application follows a Role-Based Access Control (RBAC) model where permissio
 
 ---
 
-# 📊 Dashboard Features
+## 📊 Dashboard
 
-The dashboard provides a quick overview of the system.
+The dashboard provides a quick overview of the system through a clean and responsive interface.
 
-### Dashboard Statistics
+### Dashboard Includes
 
 - 👥 Total Users
 - 👑 Total Admins
 - 🛡️ Total Managers
 - 👤 Total Members
 
-### Dashboard Highlights
-
-- Clean Card-Based UI
-- Responsive Layout
-- Dark Mode Support
-- Secure API Integration
-- Real-Time Statistics
-
 ---
 
-# 👨‍💼 Member Management
+## 👨‍💼 Member Management
 
-The Member Management module provides complete CRUD functionality.
+The Member Management module provides secure CRUD functionality protected by RBAC permissions.
 
-### Features
+### Current Features
 
 - ➕ Create Member
 - 👀 View Member
 - ✏️ Edit Member
 - ❌ Delete Member
-- 🔍 Search Members
-- 📄 Pagination
-- 📱 Responsive Data Table
+- 📱 Responsive Table Layout
 - 🌙 Dark Mode Support
+
+> Additional enhancements such as advanced search and pagination can be integrated based on project requirements.
+
+---
+# 📊 Dashboard Features
+
+The Dashboard provides administrators and authorized users with a quick overview of the application's current state.
+
+It is designed using a modern responsive card-based layout that works across desktop, tablet, and mobile devices.
+
+## Dashboard Widgets
+
+- 👥 Total Users
+- 👑 Total Admins
+- 🛡️ Total Managers
+- 👤 Total Members
+
+## Dashboard Highlights
+
+- ✅ Responsive Card Layout
+- ✅ Clean Modern UI
+- ✅ Role-Based Visibility
+- ✅ Secure API Integration
+- ✅ Mobile Friendly
+- ✅ Fast Page Rendering
+
+---
+
+# 👨‍💼 Member Management
+
+The Member Management module enables authorized users to perform CRUD operations while respecting Role-Based Access Control permissions.
+
+## Available Operations
+
+| Operation | Admin | Manager | Member |
+|-----------|:-----:|:-------:|:------:|
+| View Members | ✅ | ✅ | ✅ |
+| View Member Details | ✅ | ✅ | ✅ |
+| Create Member | ✅ | ✅ | ❌ |
+| Update Member | ✅ | ✅ | ❌ |
+| Delete Member | ✅ | ❌ | ❌ |
+
+## Module Highlights
+
+- ➕ Create Members
+- 👀 View Member Details
+- ✏️ Update Member Information
+- ❌ Delete Members (Admin Only)
+- 📱 Responsive Table Design
+- 🔐 RBAC Protected Operations
+
+> Search and pagination enhancements can be integrated depending on project requirements.
+
+---
+
+# 👤 Profile Management
+
+Each authenticated user has access to their own profile.
+
+## Features
+
+- View Profile Information
+- Display User Role
+- Secure Authentication
+- JWT Protected Endpoint
+- Responsive User Interface
 
 ---
 
 # 🛡️ Security Features
 
-Security is implemented using industry best practices.
+Security has been implemented following modern backend development best practices.
 
-- JWT Authentication
-- JWT Refresh Token
-- Password Hashing (bcrypt)
-- Protected APIs
-- Role-Based Authorization
-- Input Validation
-- Secure Route Guards
-- CORS Configuration
-- Request Validation using ValidationPipe
+## Authentication Security
+
+- ✅ JWT Access Token
+- ✅ JWT Refresh Token
+- ✅ Password Hashing using bcrypt
+- ✅ Protected API Routes
+- ✅ Authentication Guards
+
+## Authorization Security
+
+- ✅ Role-Based Access Control
+- ✅ Role Guards
+- ✅ Protected Resources
+- ✅ Permission-Based Access
+
+## Backend Security
+
+- ✅ DTO Validation
+- ✅ ValidationPipe
+- ✅ Input Validation
+- ✅ Exception Handling
+- ✅ Secure Environment Variables
+- ✅ CORS Configuration
 
 ---
 
-# 🎁 Bonus Features
-
-The following bonus features have also been implemented.
+# 🎁 Additional Features
 
 | Feature | Status |
 |----------|:------:|
 | 🌙 Dark Mode | ✅ |
 | 📘 Swagger API Documentation | ✅ |
-| 📝 Audit Logs | ✅ |
 | 🔐 JWT Refresh Token | ✅ |
 | 📄 Protected APIs | ✅ |
-| 🔍 Search | ✅ |
-| 📑 Pagination | ✅ |
+| 📱 Responsive Design | ✅ |
+| 🎭 Role-Based Authorization | ✅ |
+
+> Audit logging, advanced search, and pagination can be added or expanded based on future project requirements.
 
 ---
 
@@ -177,91 +314,88 @@ The following bonus features have also been implemented.
 | User Registration | ✅ |
 | User Login | ✅ |
 | JWT Authentication | ✅ |
-| JWT Refresh Token | ✅ |
+| Refresh Token | ✅ |
 | Password Hashing | ✅ |
 | Role-Based Access Control | ✅ |
 | Dashboard | ✅ |
 | CRUD Operations | ✅ |
-| Search | ✅ |
-| Pagination | ✅ |
 | Protected APIs | ✅ |
-| Input Validation | ✅ |
+| Request Validation | ✅ |
+| DTO Validation | ✅ |
 | CORS Configuration | ✅ |
 | Swagger Documentation | ✅ |
-| Audit Logs | ✅ |
-| Dark Mode | ✅ |
+| Responsive UI | ✅ |
 
 ---
+
 # 🏗️ System Architecture
 
-The application follows a modern Full Stack architecture where the frontend communicates with the backend through secure REST APIs protected by JWT Authentication.
-
 ```text
-                        ┌──────────────────────┐
-                        │      Web Browser     │
-                        └──────────┬───────────┘
-                                   │
-                                   ▼
-                    ┌────────────────────────────┐
-                    │   Next.js Frontend (React) │
-                    │                            │
-                    │ • Login / Register         │
-                    │ • Dashboard                │
-                    │ • Member Management        │
-                    │ • Profile                  │
-                    │ • Dark Mode                │
-                    └──────────┬─────────────────┘
+                         ┌──────────────────────┐
+                         │      Web Browser     │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                    ┌────────────────────────────────┐
+                    │      Next.js Frontend          │
+                    │────────────────────────────────│
+                    │ • Login                        │
+                    │ • Register                     │
+                    │ • Dashboard                    │
+                    │ • Members                      │
+                    │ • Profile                      │
+                    │ • Protected Routes             │
+                    └──────────┬─────────────────────┘
                                │
-                      Axios HTTP Requests
+                        Axios REST API
                                │
                                ▼
-                  ┌───────────────────────────┐
-                  │      NestJS Backend       │
-                  │                           │
-                  │ • Authentication          │
-                  │ • Authorization (RBAC)    │
-                  │ • JWT Access Token        │
-                  │ • JWT Refresh Token       │
-                  │ • CRUD APIs               │
-                  │ • Swagger                │
-                  │ • Audit Logs             │
-                  └──────────┬────────────────┘
-                             │
-                        Mongoose ODM
-                             │
-                             ▼
-                  ┌───────────────────────────┐
-                  │        MongoDB            │
-                  │                           │
-                  │ • Users                  │
-                  │ • Members                │
-                  │ • Refresh Tokens         │
-                  │ • Audit Logs             │
-                  └───────────────────────────┘
+                 ┌──────────────────────────────────┐
+                 │        NestJS Backend            │
+                 │──────────────────────────────────│
+                 │ • Authentication                 │
+                 │ • Authorization (RBAC)           │
+                 │ • JWT Access Token               │
+                 │ • Refresh Token                  │
+                 │ • Member CRUD                    │
+                 │ • Swagger API                    │
+                 │ • Validation                     │
+                 └──────────┬───────────────────────┘
+                            │
+                     Mongoose ODM
+                            │
+                            ▼
+                 ┌──────────────────────────────┐
+                 │          MongoDB             │
+                 │──────────────────────────────│
+                 │ • Users                      │
+                 │ • Members                    │
+                 │ • Refresh Tokens             │
+                 └──────────────────────────────┘
 ```
 
 ---
 
 # 🛠️ Technology Stack
 
-## Frontend
+## 🎨 Frontend
 
 | Technology | Purpose |
 |------------|---------|
 | Next.js 16 | React Framework |
 | TypeScript | Type Safety |
-| Tailwind CSS | UI Styling |
+| Tailwind CSS | UI Development |
 | Axios | API Communication |
 | Lucide React | Icons |
 
 ---
 
-## Backend
+## ⚙️ Backend
 
 | Technology | Purpose |
 |------------|---------|
 | NestJS | REST API Development |
-| MongoDB | Database |
+| MongoDB | NoSQL Database |
 | Mongoose | ODM |
 | JWT | Authentication |
 | Passport JWT | Route Protection |
@@ -270,21 +404,57 @@ The application follows a modern Full Stack architecture where the frontend comm
 
 ---
 
-## Development Tools
+## 🧰 Development Tools
 
 | Tool | Purpose |
 |------|---------|
 | Git | Version Control |
 | GitHub | Source Code Hosting |
-| Postman | API Testing |
 | VS Code | Development Environment |
+| Postman | API Testing |
 
 ---
 
+# 🎯 Why This Tech Stack?
+
+This project adopts technologies commonly used in enterprise software development.
+
+### Next.js
+
+- App Router
+- Server Components
+- Fast Rendering
+- Modern React Features
+
+### NestJS
+
+- Modular Architecture
+- Dependency Injection
+- Scalable Backend
+- Built-in Validation
+- Swagger Integration
+
+### MongoDB
+
+- Flexible Document Database
+- Fast Development
+- Mongoose ODM
+- Scalable Collections
+
+### TypeScript
+
+- Strong Typing
+- Better Maintainability
+- Improved Developer Experience
+- Reduced Runtime Errors
+
+---
 # 📂 Project Structure
 
+The project follows a clean and modular Full Stack architecture by separating the frontend and backend into independent applications.
+
 ```text
-rbac-management-system
+enterprise-rbac-management-system
 │
 ├── frontend
 │   ├── app
@@ -292,38 +462,57 @@ rbac-management-system
 │   │   ├── login
 │   │   ├── members
 │   │   ├── profile
-│   │   └── register
+│   │   ├── register
+│   │   └── layout.tsx
 │   │
 │   ├── components
 │   ├── hooks
 │   ├── services
+│   ├── lib
+│   ├── middleware
 │   ├── types
-│   └── utils
+│   ├── utils
+│   ├── public
+│   └── package.json
 │
 ├── backend
 │   ├── src
 │   │   ├── auth
-│   │   ├── audit
-│   │   ├── dashboard
-│   │   ├── members
 │   │   ├── users
+│   │   ├── members
+│   │   ├── dashboard
+│   │   ├── common
+│   │   ├── config
+│   │   ├── guards
+│   │   ├── decorators
+│   │   ├── strategies
+│   │   ├── schemas
 │   │   └── main.ts
 │   │
 │   ├── package.json
 │   └── tsconfig.json
 │
-└── README.md
+├── README.md
+├── LICENSE
+├── .env.example
+└── .gitignore
 ```
 
 ---
 
 # 🚀 Getting Started
 
-## Clone Repository
+Follow the steps below to set up the project locally.
+
+---
+
+# 📥 Clone Repository
 
 ```bash
 git clone https://github.com/Gokul768/rbac-management-system.git
 ```
+
+Move into the project folder.
 
 ```bash
 cd rbac-management-system
@@ -333,25 +522,27 @@ cd rbac-management-system
 
 # 📦 Backend Installation
 
+Navigate to the backend directory.
+
 ```bash
 cd backend
 ```
 
-Install dependencies
+Install dependencies.
 
 ```bash
 npm install
 ```
 
-Run development server
+Run the development server.
 
 ```bash
 npm run start:dev
 ```
 
-Backend will start at
+Backend runs on:
 
-```
+```text
 http://localhost:5000
 ```
 
@@ -359,36 +550,47 @@ http://localhost:5000
 
 # 💻 Frontend Installation
 
+Navigate to the frontend directory.
+
 ```bash
 cd frontend
 ```
 
-Install dependencies
+Install dependencies.
 
 ```bash
 npm install
 ```
 
-Run development server
+Start the frontend.
 
 ```bash
 npm run dev
 ```
 
-Frontend will start at
+Frontend runs on:
 
-```
+```text
 http://localhost:3000
 ```
 
 ---
-# 🔑 Environment Variables
 
-Create the following environment files before running the application.
+# ⚙️ Environment Setup
+
+Create the environment files before running the project.
 
 ---
 
-## Backend (.env)
+## Backend
+
+Create
+
+```text
+backend/.env
+```
+
+Example
 
 ```env
 PORT=5000
@@ -406,7 +608,15 @@ JWT_REFRESH_EXPIRES_IN=7d
 
 ---
 
-## Frontend (.env.local)
+## Frontend
+
+Create
+
+```text
+frontend/.env.local
+```
+
+Example
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000
@@ -414,135 +624,127 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 
 ---
 
-# 📚 API Documentation
+# 📄 .env.example
 
-Swagger API Documentation is available after running the backend.
+For open-source contributors, an example environment file is included.
 
-### Swagger URL
-
-```
-http://localhost:5000/api
+```bash
+cp .env.example .env
 ```
 
-Swagger includes:
+Update the values with your own credentials.
 
-- Authentication APIs
-- Member APIs
-- Request Validation
-- Response Schemas
-- JWT Authorization Support
+```env
+PORT=
+
+MONGODB_URI=
+
+JWT_SECRET=
+
+JWT_REFRESH_SECRET=
+
+JWT_EXPIRES_IN=
+
+JWT_REFRESH_EXPIRES_IN=
+```
 
 ---
 
-# 📡 API Endpoints
+# ▶️ Running the Application
+
+## Backend
+
+```bash
+npm run start:dev
+```
+
+---
+
+## Frontend
+
+```bash
+npm run dev
+```
+
+---
+
+# 📚 API Documentation
+
+Swagger is enabled for easy API testing and documentation.
+
+After starting the backend, visit
+
+```text
+http://localhost:5000/api
+```
+
+Swagger provides:
+
+- Authentication APIs
+- Member APIs
+- Request Models
+- Response Schemas
+- JWT Authorization
+- Interactive API Testing
+
+---
+
+# 📡 REST API Endpoints
 
 ## Authentication
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| POST | /auth/register | Register a new user |
-| POST | /auth/login | User login |
-| POST | /auth/refresh | Generate new access token |
-| POST | /auth/logout | Logout user |
-| GET | /auth/profile | Get logged-in user profile |
+| POST | /auth/register | Register User |
+| POST | /auth/login | Login |
+| POST | /auth/refresh | Refresh Token |
+| POST | /auth/logout | Logout |
+| GET | /auth/profile | User Profile |
 
 ---
 
-## Member Management
+## Members
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | /members | Get all members |
-| GET | /members/:id | Get member by ID |
-| POST | /members | Create member |
-| PUT | /members/:id | Update member |
-| DELETE | /members/:id | Delete member |
+| GET | /members | Get Members |
+| GET | /members/:id | Get Member |
+| POST | /members | Create Member |
+| PUT | /members/:id | Update Member |
+| DELETE | /members/:id | Delete Member |
 
 ---
 
 # 🗄️ Database Collections
 
-MongoDB contains the following collections.
+The application uses MongoDB with separate collections.
 
 | Collection | Purpose |
 |------------|---------|
 | Users | Stores registered users |
 | Members | Stores member information |
-| Refresh Tokens | Stores JWT Refresh Tokens |
-| Audit Logs | Stores user activity logs |
+| Refresh Tokens | Stores active refresh tokens |
 
 ---
 
-# 📸 Application Screenshots
-
-> Screenshots can be added here after deployment.
-
-### Login Page
-
-```
-/screenshots/login.png
-```
-
-### Dashboard
-
-```
-/screenshots/dashboard.png
-```
-
-### Members Page
-
-```
-/screenshots/members.png
-```
-
-### Profile Page
-
-```
-/screenshots/profile.png
-```
-
-### Dark Mode
-
-```
-/screenshots/dark-mode.png
-```
-
----
-
-# 🚀 Future Enhancements
-
-Some planned improvements include:
-
-- Email Verification
-- Forgot Password
-- Profile Picture Upload
-- Dashboard Charts & Analytics
-- Export Members to Excel/PDF
-- Advanced Filters
-- Docker Support
-- CI/CD Pipeline
-- Unit Testing
-- Deployment to Cloud
-
----
-# 🔄 Authentication Flow
+# 🔐 Authentication Flow
 
 ```text
-                    Register
-                       │
-                       ▼
-               User Account Created
-                       │
-                       ▼
-                    Login
-                       │
-        ┌──────────────┴──────────────┐
-        ▼                             ▼
- Access Token                  Refresh Token
- (15 Minutes)                    (7 Days)
-        │                             │
-        ▼                             ▼
- Protected APIs            Generate New Access Token
+             Register
+                 │
+                 ▼
+          User Created
+                 │
+                 ▼
+              Login
+                 │
+        ┌────────┴────────┐
+        ▼                 ▼
+ Access Token       Refresh Token
+   (15 Minutes)       (7 Days)
+        │
+        ▼
+ Protected APIs
         │
         ▼
  Authorized Request
@@ -552,19 +754,227 @@ Some planned improvements include:
 
 # 🛡️ Security Implementation
 
-The application follows modern security standards.
+Security follows enterprise best practices.
 
-| Security Feature | Implemented |
-|------------------|:-----------:|
-| Password Hashing (bcrypt) | ✅ |
+| Security Feature | Status |
+|------------------|:------:|
+| Password Hashing | ✅ |
 | JWT Authentication | ✅ |
-| Refresh Token Rotation | ✅ |
-| Protected APIs | ✅ |
+| Refresh Tokens | ✅ |
 | Role Guards | ✅ |
-| Input Validation | ✅ |
+| Protected Routes | ✅ |
+| DTO Validation | ✅ |
 | ValidationPipe | ✅ |
-| CORS Configuration | ✅ |
 | Environment Variables | ✅ |
+| CORS Configuration | ✅ |
+| Exception Filters | ✅ |
+
+---
+
+# 🧪 Testing the APIs
+
+You can test APIs using:
+
+- Swagger UI
+- Postman
+- Thunder Client
+- Insomnia
+
+Recommended flow:
+
+1. Register User
+2. Login
+3. Copy JWT Token
+4. Authorize in Swagger
+5. Test Protected APIs
+
+---
+# 📸 Application Screenshots
+
+> Screenshots will be added after deployment.
+
+---
+
+## 🔐 Login Page
+
+Displays secure authentication with JWT.
+
+```text
+/screenshots/login.png
+```
+
+---
+
+## 📝 Registration Page
+
+New users can create an account.
+
+```text
+/screenshots/register.png
+```
+
+---
+
+## 📊 Dashboard
+
+Displays application statistics.
+
+```text
+/screenshots/dashboard.png
+```
+
+---
+
+## 👥 Members
+
+Manage members according to user role.
+
+```text
+/screenshots/members.png
+```
+
+---
+
+## 👤 Profile
+
+Displays authenticated user's information.
+
+```text
+/screenshots/profile.png
+```
+
+---
+
+## 🌙 Dark Mode
+
+Responsive dark theme.
+
+```text
+/screenshots/dark-mode.png
+```
+
+---
+
+# 🚀 Deployment
+
+## Frontend
+
+Deploy using
+
+- Vercel
+- Netlify
+
+Environment Variable
+
+```env
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+```
+
+---
+
+## Backend
+
+Deploy using
+
+- Render
+- Railway
+- DigitalOcean
+- AWS
+
+Environment Variables
+
+```env
+PORT=
+
+MONGODB_URI=
+
+JWT_SECRET=
+
+JWT_REFRESH_SECRET=
+```
+
+---
+
+## Database
+
+MongoDB Atlas
+
+- Create Cluster
+- Create Database User
+- Whitelist IP
+- Copy Connection String
+
+---
+
+# 📈 Future Enhancements
+
+The project is designed with scalability in mind.
+
+Planned improvements include:
+
+- Email Verification
+- Forgot Password
+- Password Reset
+- User Avatar Upload
+- Dashboard Charts
+- Advanced Analytics
+- Export Members to Excel
+- Export Members to PDF
+- Email Notifications
+- Docker Support
+- CI/CD Pipeline
+- Unit Testing
+- Integration Testing
+- Audit Dashboard
+- Activity Timeline
+- Advanced Search
+- Pagination Improvements
+- Multi-language Support
+
+---
+
+# 💡 Best Practices Followed
+
+This project follows modern Full Stack engineering practices.
+
+## Backend
+
+- Modular Architecture
+- Feature Modules
+- Dependency Injection
+- DTO Validation
+- ValidationPipe
+- Exception Filters
+- Route Guards
+- JWT Strategy
+- Refresh Tokens
+- Clean Code
+- Reusable Services
+
+---
+
+## Frontend
+
+- App Router
+- Reusable Components
+- Custom Hooks
+- Responsive Design
+- API Service Layer
+- Type Safety
+- Loading States
+- Error Handling
+
+---
+
+## Security
+
+- Password Hashing
+- JWT Authentication
+- Protected APIs
+- Role Guards
+- Environment Variables
+- Input Validation
+- Secure REST APIs
 
 ---
 
@@ -574,55 +984,113 @@ The application follows modern security standards.
 |-------------|:------:|
 | GitHub Repository | ✅ |
 | README Documentation | ✅ |
-| Database Schema | ✅ |
-| Swagger API Documentation | ✅ |
+| Swagger Documentation | ✅ |
+| Backend APIs | ✅ |
+| Frontend UI | ✅ |
+| Authentication | ✅ |
+| RBAC | ✅ |
+| CRUD Operations | ✅ |
 | Environment Setup Guide | ✅ |
-| Sample Environment File | ✅ |
+| .env.example | ✅ |
 
 ---
 
-# 📈 Project Metrics
+# 📊 Project Metrics
 
 | Metric | Value |
 |---------|------:|
-| Frontend Framework | Next.js |
-| Backend Framework | NestJS |
+| Frontend | Next.js 15/16 |
+| Backend | NestJS |
 | Database | MongoDB |
 | Authentication | JWT |
 | User Roles | 3 |
 | CRUD Modules | 1 |
 | Dashboard Cards | 4 |
-| REST APIs | 10+ |
-| Dark Mode | Yes |
-| Swagger | Yes |
-| Audit Logs | Yes |
+| Protected APIs | 10+ |
+| Swagger APIs | Yes |
+| Responsive UI | Yes |
+| TypeScript | Yes |
 
 ---
 
-# 🎖️ Project Highlights
+# 🎯 Learning Outcomes
 
-- Enterprise-style RBAC Architecture
-- Secure Authentication using JWT
-- Refresh Token Implementation
-- RESTful API Design
-- Responsive User Interface
-- Dark Mode Support
+During this project I gained hands-on experience with:
+
+- Enterprise Authentication
+- JWT Access & Refresh Tokens
+- Role-Based Access Control
+- NestJS Framework
+- Next.js App Router
+- MongoDB & Mongoose
+- REST API Development
 - Swagger Documentation
-- Audit Logging
-- Modular Backend Structure
-- Clean Component-Based Frontend
+- DTO Validation
+- Route Guards
+- TypeScript
+- Responsive UI Development
+- Git & GitHub Workflow
 
-# 👨‍💻 Author
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+If you'd like to improve this project:
+
+1. Fork the repository
+2. Create a new branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature-name
+```
+
+5. Open a Pull Request
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+Feel free to use this repository for learning and educational purposes.
+
+---
+
+# ⭐ Support
+
+If you found this repository useful,
+
+⭐ Star this repository
+
+🍴 Fork this repository
+
+💬 Share your feedback
+
+🐛 Report issues
+
+---
+
+# 🙋 Author
 
 ## Gokul Kumar M
 
 Full Stack Developer
 
-- 🎓 B.Tech Artificial Intelligence & Data Science
-- 💻 Passionate about Full Stack Development
-- 🚀 Interested in Next.js, NestJS, React Native, AI & Modern Web Technologies
-
-### Connect with Me
+### Connect
 
 **GitHub**
 
@@ -634,136 +1102,15 @@ https://www.linkedin.com/in/gokulkumar-m-8aa977355
 
 ---
 
-# 📄 License
-
-This project was developed as a **Full Stack Developer Interview Assignment**.
-
-It is intended for educational and portfolio purposes.
-
----
-
 <div align="center">
 
-## ⭐ If you found this project useful, consider giving it a Star on GitHub!
-
-**Thank you for visiting this repository.**
-
-Made with ❤️ by **Gokul Kumar M**
-
-</div>
-# 📌 Project Highlights
-
-| Feature | Status |
-|----------|:------:|
-| Authentication | ✅ Complete |
-| Authorization (RBAC) | ✅ Complete |
-| JWT Access Token | ✅ Complete |
-| JWT Refresh Token | ✅ Complete |
-| Dashboard | ✅ Complete |
-| CRUD Operations | ✅ Complete |
-| Search | ✅ Complete |
-| Pagination | ✅ Complete |
-| Profile Page | ✅ Complete |
-| Dark Mode | ✅ Complete |
-| Swagger Documentation | ✅ Complete |
-| Audit Logs | ✅ Complete |
-
----
-
-# 🎯 Why This Project?
-
-This project demonstrates modern Full Stack development practices and secure web application architecture.
-
-Key learning outcomes include:
-
-- Designing scalable REST APIs
-- Secure JWT Authentication
-- Role-Based Authorization
-- Clean Architecture
-- MongoDB Data Modeling
-- Responsive UI Design
-- API Documentation using Swagger
-- Production-ready project structure
-
----
-
-# 🏆 Best Practices Followed
-
-- Clean Folder Structure
-- Modular Architecture
-- Reusable Components
-- DTO Validation
-- Protected Routes
-- Role Guards
-- JWT Strategy
-- Environment Variables
-- TypeScript
-- Responsive Design
-- Error Handling
-- Audit Logging
-
----
-
-# 📈 Project Statistics
-
-| Category | Count |
-|-----------|------:|
-| Frontend Pages | 8+ |
-| Backend Modules | 5+ |
-| Protected APIs | 10+ |
-| User Roles | 3 |
-| Database Collections | 4 |
-| Dashboard Widgets | 4 |
-| Authentication APIs | 5 |
-| CRUD APIs | 5 |
-
----
-
-# 💡 Learning Outcomes
-
-During this project, I gained practical experience with:
-
-- Full Stack Development
-- Next.js App Router
-- NestJS Framework
-- MongoDB & Mongoose
-- JWT Authentication
-- Refresh Token Flow
-- Role-Based Access Control
-- REST API Design
-- Swagger Documentation
-- Git & GitHub Workflow
-- Modern UI Development
-
----
-
-# 🤝 Contribution
-
-This project was developed independently as part of a technical interview assignment.
-
-Suggestions and improvements are always welcome.
-
----
-
-# ⭐ Repository Support
-
-If you found this project useful,
-
-⭐ Star the repository
-
-🍴 Fork the project
-
-📢 Share your feedback
-
----
-
-<div align="center">
-
-## 🚀 Thank You
+# 🚀 Thank You
 
 Thank you for taking the time to review this project.
 
-I hope it demonstrates my understanding of modern Full Stack Development, secure backend architecture, and clean frontend implementation.
+This project demonstrates modern Full Stack Development practices using Next.js, NestJS, MongoDB, JWT Authentication, and Role-Based Access Control.
+
+If you found this project helpful, consider giving it a ⭐ on GitHub.
 
 Made with ❤️ by **Gokul Kumar M**
 
